@@ -1,0 +1,117 @@
+/* Custom theme for InkonabTV Panel */
+
+/* General body background */
+body {
+    background-color: #1a1a1a; /* Dark background */
+    color: #eaeaea; /* Light text color */
+}
+
+/* Sidebar styling */
+.main-sidebar {
+    background-color: #202020; /* Darker sidebar background */
+    color: #eaeaea; /* Light text color */
+}
+
+.main-sidebar .nav-link {
+    color: #eaeaea; /* Light text color for links */
+}
+
+.main-sidebar .nav-link:hover,
+.main-sidebar .nav-link.active {
+    background-color: #fcc509; /* Brand color for active/hover */
+    color: #000000; /* Dark text on active/hover */
+}
+
+/* Navbar styling */
+.main-header.navbar {
+    background-color: #282828; /* Darker navbar background */
+    color: #eaeaea; /* Light text color */
+}
+
+.main-header .nav-link {
+    color: #eaeaea; /* Light text color for navbar links */
+}
+
+.main-header .nav-link:hover {
+    color: #fcc509; /* Brand color on hover */
+}
+
+/* Brand logo */
+.brand-link {
+    background-color: #202020; /* Match sidebar background */
+    color: #fcc509 !important; /* Brand color for logo text */
+}
+
+.brand-link:hover {
+    background-color: #fcc509; /* Brand color on hover */
+    color: #000000 !important; /* Dark text on hover */
+}
+
+/* Footer styling */
+.main-footer {
+    background-color: #1f1f1f; /* Dark footer background */
+    color: #b3b3b3; /* Light text color */
+}
+
+.main-footer a {
+    color: #fcc509; /* Brand color for links */
+}
+
+.main-footer a:hover {
+    color: #eaeaea; /* Light text color on hover */
+}
+
+/* Card header styling */
+.card-header {
+    background-color: #333333; /* Dark card header */
+    color: #fcc509; /* Brand color for card header text */
+}
+
+/* Button styling */
+.btn-primary {
+    background-color: #fcc509;
+    border-color: #fcc509;
+    color: #000000; /* Dark text on buttons */
+}
+
+.btn-primary:hover {
+    background-color: #d4a308; /* Darker shade of brand color */
+    border-color: #d4a308;
+    color: #000000; /* Dark text on hover */
+}
+
+/* Info box icons */
+.info-box-icon {
+    background-color: #fcc509 !important; /* Brand color for icons */
+    color: #000000; /* Dark text on icons */
+}
+
+/* Replace the copyright text */
+.main-footer::before {
+    content: "Copyright © InkonabTV 2024. All rights reserved.";
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #b3b3b3;
+}
+
+.main-footer {
+    color: transparent; /* Hide the original text */
+    position: relative;
+}
+
+.main-footer .float-right {
+    color: #b3b3b3; /* Ensure the version text is still visible */
+}
+
+/* Remove favicon and related meta tags */
+link[rel~="icon"],
+link[rel~="apple-touch-icon"],
+link[rel~="manifest"],
+link[rel~="mask-icon"],
+meta[name="apple-mobile-web-app-title"],
+meta[name="application-name"],
+meta[name="msapplication-TileColor"],
+meta[name="theme-color"] {
+    display: none !important;
+}
