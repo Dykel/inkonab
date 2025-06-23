@@ -9,7 +9,7 @@
 
 3. **Download & Install InkonabTV:**  
    - Open **Downloader** app.  
-   - Enter code: `4730516` and click **Go**.  
+   - Enter code: `3536044` and click **Go**.  
    - When download finishes, select **Install**.  
    - Open InkonabTV from your apps.
 
