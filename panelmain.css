@@ -1,120 +1,173 @@
-/* InkonabTV Panel Theme - 2025 Optimized */
-
-/* Color Variables */
 :root {
-    --bg-main: #1a1a1a;
-    --bg-sidebar: #202020;
-    --bg-navbar: #282828;
-    --bg-footer: #1f1f1f;
-    --bg-card-header: #333333;
-    --brand: #fcc509;
-    --brand-dark: #d4a308;
-    --text-light: #eaeaea;
-    --text-muted: #b3b3b3;
-    --text-dark: #000000;
+  --brand: #fcc509;
+  --brand-dark: #d4a308;
+  --text-dark: #000;
+  --text-light: #eaeaea;
+  --text-muted: #b3b3b3;
+  --font: 'Segoe UI', sans-serif;
 }
-
-/* Base styles */
 body {
-    background-color: var(--bg-main);
-    color: var(--text-light);
-    font-family: 'Segoe UI', sans-serif;
+  font-family: var(--font);
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
 }
-
-/* Sidebar */
-.main-sidebar, .brand-link {
-    background-color: var(--bg-sidebar);
-    color: var(--text-light);
+@media (max-width: 768px) {
+  body {
+    font-size: 15px;
+  }
+  .info-box {
+    flex-direction: row;
+    align-items: center;
+  }
 }
-
-.main-sidebar .nav-link {
-    color: var(--text-light);
-    transition: all 0.2s ease;
+@media (max-width: 480px) {
+  .main-sidebar {
+    font-size: 14px;
+  }
 }
-
-.main-sidebar .nav-link:hover,
-.main-sidebar .nav-link.active {
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #1a1a1a;
+    color: var(--text-light);
+  }
+  .main-sidebar,
+  .brand-link {
+    background-color: #202020;
+    color: var(--text-light);
+  }
+  .main-header.navbar {
+    background-color: #282828;
+    color: var(--text-light);
+  }
+  .main-header .nav-link,
+  .main-sidebar .nav-link {
+    color: var(--text-light);
+    transition: 0.2s;
+  }
+  .main-sidebar .nav-link:hover,
+  .main-sidebar .nav-link.active {
     background-color: var(--brand);
     color: var(--text-dark);
-}
-
-/* Navbar */
-.main-header.navbar {
-    background-color: var(--bg-navbar);
-    color: var(--text-light);
-}
-
-.main-header .nav-link {
-    color: var(--text-light);
-    transition: color 0.2s;
-}
-
-.main-header .nav-link:hover {
-    color: var(--brand);
-}
-
-/* Brand logo hover */
-.brand-link:hover {
+  }
+  .brand-link:hover {
     background-color: var(--brand);
     color: var(--text-dark) !important;
-}
-
-/* Footer */
-.main-footer {
-    background-color: var(--bg-footer);
+  }
+  .main-footer {
+    background-color: #1f1f1f;
+    color: transparent !important;
     position: relative;
-    color: transparent;
-}
-
-.main-footer::before {
+    font-size: 0;
+  }
+  .main-footer::before {
     content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
     display: block;
     text-align: center;
     width: 100%;
     color: var(--text-muted);
-    font-size: 0.875rem;
-}
-
-.main-footer .float-right {
-    color: var(--text-muted);
-}
-
-.main-footer a {
+    font-size: 14px;
+  }
+  .main-footer .float-right {
+    color: var(--text-muted) !important;
+    font-size: 13px;
+  }
+  .main-footer a {
     color: var(--brand);
-    transition: color 0.2s;
-}
-
-.main-footer a:hover {
+  }
+  .main-footer a:hover {
     color: var(--text-light);
-}
-
-/* Card Headers */
-.card-header {
-    background-color: var(--bg-card-header);
+  }
+  .card-header {
+    background-color: #333;
     color: var(--brand);
     font-weight: 600;
-}
-
-/* Buttons */
-.btn-primary {
+  }
+  .btn-primary {
     background-color: var(--brand);
     border-color: var(--brand);
     color: var(--text-dark);
-    transition: all 0.2s ease;
-}
-
-.btn-primary:hover {
+  }
+  .btn-primary:hover {
     background-color: var(--brand-dark);
     border-color: var(--brand-dark);
-}
-
-/* Info Box Icons */
-.info-box-icon {
+  }
+  .info-box-icon {
     background-color: var(--brand) !important;
     color: var(--text-dark);
+  }
 }
-
-/* Remove favicon/meta tags */
+@media (prefers-color-scheme: light) {
+  body {
+    background-color: #ffffff;
+    color: #222;
+  }
+  .main-sidebar,
+  .brand-link {
+    background-color: #f0f0f0;
+    color: #222;
+  }
+  .main-header.navbar {
+    background-color: #ffffff;
+    color: #222;
+    border-bottom: 1px solid #ccc;
+  }
+  .main-sidebar .nav-link {
+    color: #222;
+  }
+  .main-sidebar .nav-link:hover,
+  .main-sidebar .nav-link.active {
+    background-color: var(--brand);
+    color: var(--text-dark);
+  }
+  .brand-link:hover {
+    background-color: var(--brand);
+    color: var(--text-dark) !important;
+  }
+  .main-footer {
+    background-color: #f8f8f8;
+    color: transparent !important;
+    position: relative;
+    font-size: 0;
+  }
+  .main-footer::before {
+    content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
+    display: block;
+    text-align: center;
+    width: 100%;
+    color: #666;
+    font-size: 14px;
+  }
+  .main-footer .float-right {
+    color: #888 !important;
+    font-size: 13px;
+  }
+  .main-footer a {
+    color: var(--brand);
+  }
+  .main-footer a:hover {
+    color: #111;
+  }
+  .card-header {
+    background-color: #f9f9f9;
+    color: var(--brand);
+    font-weight: 600;
+  }
+  .btn-primary {
+    background-color: var(--brand);
+    border-color: var(--brand);
+    color: var(--text-dark);
+  }
+  .btn-primary:hover {
+    background-color: var(--brand-dark);
+    border-color: var(--brand-dark);
+  }
+  .info-box-icon {
+    background-color: var(--brand) !important;
+    color: var(--text-dark);
+  }
+}
+/* Hide favicon/meta visually */
 link[rel~="icon"],
 link[rel~="apple-touch-icon"],
 link[rel~="manifest"],
@@ -123,5 +176,5 @@ meta[name="apple-mobile-web-app-title"],
 meta[name="application-name"],
 meta[name="msapplication-TileColor"],
 meta[name="theme-color"] {
-    display: none !important;
+  display: none !important;
 }
