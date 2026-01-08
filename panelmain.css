@@ -1,3 +1,46 @@
+/* 1. Hide the original text in the footer */
+.main-footer {
+    font-size: 0 !important;
+    color: transparent !important;
+    text-align: center; /* Keeps the new text centered */
+    padding: 15px;      /* Adjust padding as needed */
+}
+
+/* 2. Inject the new custom text */
+.main-footer::before {
+    content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
+    display: block;
+    font-size: 14px; /* Set the visible font size here */
+    visibility: visible;
+}
+
+/* 3. Handle Colors for Dark Mode */
+@media (prefers-color-scheme: dark) {
+    .main-footer {
+        background-color: #1f1f1f;
+    }
+    .main-footer::before {
+        color: #b3b3b3; /* Your --text-muted color */
+    }
+}
+
+/* 4. Handle Colors for Light Mode */
+@media (prefers-color-scheme: light) {
+    .main-footer {
+        background-color: #f8f8f8;
+    }
+    .main-footer::before {
+        color: #666666;
+    }
+}
+
+/* 5. Ensure the "float-right" version info stays visible if needed */
+.main-footer .float-right {
+    font-size: 13px !important;
+    visibility: visible !important;
+    color: inherit; 
+    display: inline-block;
+}
 :root {
   --brand: #fcc509;
   --brand-dark: #d4a308;
