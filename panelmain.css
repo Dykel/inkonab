@@ -1,45 +1,35 @@
-/* 1. Hide the original text in the footer */
+/* 1. Hide the original text nodes inside the footer */
 .main-footer {
-    font-size: 0 !important;
-    color: transparent !important;
-    text-align: center; /* Keeps the new text centered */
-    padding: 15px;      /* Adjust padding as needed */
+  font-size: 0 !important;           /* Hides the "IPTV Panel" text */
+  color: transparent !important;    /* Ensures no ghost text remains */
+  padding: 1rem !important;
+  position: relative;
 }
 
-/* 2. Inject the new custom text */
+/* 2. Inject your new brand name */
 .main-footer::before {
-    content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
-    display: block;
-    font-size: 14px; /* Set the visible font size here */
-    visibility: visible;
+  content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
+  font-size: 14px !important;       /* Brings text back at a readable size */
+  visibility: visible;
+  display: inline-block;            /* Keeps it on the same line as the version if possible */
 }
 
-/* 3. Handle Colors for Dark Mode */
-@media (prefers-color-scheme: dark) {
-    .main-footer {
-        background-color: #1f1f1f;
-    }
-    .main-footer::before {
-        color: #b3b3b3; /* Your --text-muted color */
-    }
-}
-
-/* 4. Handle Colors for Light Mode */
-@media (prefers-color-scheme: light) {
-    .main-footer {
-        background-color: #f8f8f8;
-    }
-    .main-footer::before {
-        color: #666666;
-    }
-}
-
-/* 5. Ensure the "float-right" version info stays visible if needed */
+/* 3. Restore the Version number (float-right) */
 .main-footer .float-right {
-    font-size: 13px !important;
-    visibility: visible !important;
-    color: inherit; 
-    display: inline-block;
+  font-size: 13px !important;       /* Overrides the 0px from parent */
+  visibility: visible !important;
+  color: var(--text-muted) !important;
+}
+
+/* 4. Color adjustments for Dark and Light modes */
+@media (prefers-color-scheme: dark) {
+  .main-footer::before { color: #b3b3b3; } /* Muted grey */
+  .main-footer .float-right { color: #b3b3b3; }
+}
+
+@media (prefers-color-scheme: light) {
+  .main-footer::before { color: #666666; } /* Darker grey for light mode */
+  .main-footer .float-right { color: #888888; }
 }
 :root {
   --brand: #fcc509;
