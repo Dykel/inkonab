@@ -1,35 +1,45 @@
-/* 1. Hide the original text nodes inside the footer */
+/* 1. Target the footer and hide EVERYTHING (including the old text) */
 .main-footer {
-  font-size: 0 !important;           /* Hides the "IPTV Panel" text */
-  color: transparent !important;    /* Ensures no ghost text remains */
-  padding: 1rem !important;
-  position: relative;
+    visibility: hidden !important;
+    position: relative !important;
+    padding: 15px !important;
+    /* Keeps the bar background visible */
 }
 
-/* 2. Inject your new brand name */
+/* 2. Injects your new text and makes it visible */
 .main-footer::before {
-  content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
-  font-size: 14px !important;       /* Brings text back at a readable size */
-  visibility: visible;
-  display: inline-block;            /* Keeps it on the same line as the version if possible */
+    content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
+    visibility: visible !important;
+    position: absolute !important;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 14px !important;
+    display: block !important;
 }
 
-/* 3. Restore the Version number (float-right) */
+/* 3. Forces the Version number (float-right) to be visible again */
 .main-footer .float-right {
-  font-size: 13px !important;       /* Overrides the 0px from parent */
-  visibility: visible !important;
-  color: var(--text-muted) !important;
+    visibility: visible !important;
+    font-size: 13px !important;
+    position: absolute !important;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
 }
 
-/* 4. Color adjustments for Dark and Light modes */
+/* 4. Color handling for Dark Mode */
 @media (prefers-color-scheme: dark) {
-  .main-footer::before { color: #b3b3b3; } /* Muted grey */
-  .main-footer .float-right { color: #b3b3b3; }
+    .main-footer { background-color: #1f1f1f !important; }
+    .main-footer::before { color: #b3b3b3 !important; }
+    .main-footer .float-right { color: #b3b3b3 !important; }
 }
 
+/* 5. Color handling for Light Mode */
 @media (prefers-color-scheme: light) {
-  .main-footer::before { color: #666666; } /* Darker grey for light mode */
-  .main-footer .float-right { color: #888888; }
+    .main-footer { background-color: #f8f8f8 !important; }
+    .main-footer::before { color: #666666 !important; }
+    .main-footer .float-right { color: #888888 !important; }
 }
 :root {
   --brand: #fcc509;
