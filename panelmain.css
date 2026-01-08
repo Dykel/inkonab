@@ -1,46 +1,48 @@
-/* 1. Target the footer and hide EVERYTHING (including the old text) */
-.main-footer {
+/* 1. Hide the original text nodes inside the footer */
+body .wrapper .main-footer {
     visibility: hidden !important;
     position: relative !important;
-    padding: 15px !important;
-    /* Keeps the bar background visible */
-}
-
-/* 2. Injects your new text and makes it visible */
-.main-footer::before {
-    content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
-    visibility: visible !important;
-    position: absolute !important;
-    left: 1rem;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 14px !important;
     display: block !important;
 }
 
-/* 3. Forces the Version number (float-right) to be visible again */
-.main-footer .float-right {
+/* 2. Create and show your new Copyright text */
+body .wrapper .main-footer::before {
+    content: "Copyright © InkonabTV Panel 2025. All rights reserved.";
     visibility: visible !important;
-    font-size: 13px !important;
     position: absolute !important;
-    right: 1rem;
+    left: 20px; /* Adjust to match your side padding */
     top: 50%;
     transform: translateY(-50%);
+    font-size: 14px !important;
+    white-space: nowrap;
 }
 
-/* 4. Color handling for Dark Mode */
+/* 3. Bring back the Version number on the right */
+body .wrapper .main-footer .float-right {
+    visibility: visible !important;
+    position: absolute !important;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 13px !important;
+}
+
+/* --- Theme Coloring --- */
+
 @media (prefers-color-scheme: dark) {
-    .main-footer { background-color: #1f1f1f !important; }
-    .main-footer::before { color: #b3b3b3 !important; }
-    .main-footer .float-right { color: #b3b3b3 !important; }
+    body .wrapper .main-footer::before,
+    body .wrapper .main-footer .float-right {
+        color: #b3b3b3 !important; /* Muted gray */
+    }
 }
 
-/* 5. Color handling for Light Mode */
 @media (prefers-color-scheme: light) {
-    .main-footer { background-color: #f8f8f8 !important; }
-    .main-footer::before { color: #666666 !important; }
-    .main-footer .float-right { color: #888888 !important; }
+    body .wrapper .main-footer::before,
+    body .wrapper .main-footer .float-right {
+        color: #666666 !important;
+    }
 }
+/* --- Dykel  Coloring --- */
 :root {
   --brand: #fcc509;
   --brand-dark: #d4a308;
